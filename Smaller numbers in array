@@ -1,0 +1,25 @@
+class Solution {
+    public int[] smallerNumbersThanCurrent(int[] a) 
+    {
+        int n=a.length;
+        int[] output = new int[n];
+
+        int temp=0,k=0;
+
+        for(int i=0;i<n;i++)
+        {
+            temp=0;
+            for(int j=0;j<n;j++)
+            {
+                if(a[j]<a[i])
+                {
+                    temp++;
+                }
+            }
+            output[i]=temp;
+        }
+        
+        return output;
+        
+    }
+}
