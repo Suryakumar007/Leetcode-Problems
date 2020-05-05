@@ -1,0 +1,19 @@
+int a[]={-7,-3,2,3,11};
+        int n= a.length;
+        int[] output = new int[n];
+
+        int i=0, j=n-1,filler=n-1;
+
+        while(filler>=0)
+        {
+            if(a[i]* a[i] > a[j]* a[j])
+            {
+                output[filler--]=a[i]*a[i];
+                i++;
+            }
+            else
+            {
+                output[filler--]=a[j]*a[j];
+                j--;
+            }
+        }
