@@ -1,0 +1,29 @@
+ int a[]={2,2,1,1,1,2,2};
+        int n=a.length;
+        int count=1;
+        int i=0;
+
+        Arrays.sort(a);
+
+        for(i=0;i<n-1;i++)
+        {
+            if(a[i]==a[i+1])
+            {
+                count++;
+            }
+            else if(a[i]!=a[i+1])
+            {
+                if(count>(n/2))
+                {
+                    System.out.println(a[i]);
+                    break;
+                }
+                count=1;
+            }
+
+        }
+        if(count>(n/2))
+        {
+            System.out.println(a[i]);
+
+        }
