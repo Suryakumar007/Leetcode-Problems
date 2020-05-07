@@ -1,0 +1,41 @@
+String[] words={"cat","bt","hat","tree"};
+        int n=words.length;
+        String chars="atach";
+        boolean flag=true;
+        int count=0;
+
+        char[] charArray=chars.toCharArray();
+        int[] superset= new int[128];
+
+
+        for(char c : charArray)
+        {
+            superset[c]++;
+        }
+
+        for(String s : words)
+        {
+            flag=true;
+            char[] currentArray=s.toCharArray();
+
+            int[] subset= new int[128];
+
+            for(char c : currentArray)
+            {
+                subset[c]++;
+            }
+
+            for(char c : currentArray)
+            {
+                if(superset[c]<subset[c])
+                {
+                    flag=false;
+                    break;
+                }
+            }
+            if(flag)
+            {
+                count=count+s.length();
+            }
+        }
+        System.out.println(count);
