@@ -1,0 +1,22 @@
+public int[] sortArrayByParityII(int[] a) 
+    {
+        int n=a.length;
+        int[] b =new int[n];
+        int oddplacer=1,evenplacer=0;
+        for(int i=0;i<n;i++)
+        {
+            if(a[i]%2==0)
+            {
+                b[evenplacer]=a[i];
+                evenplacer+=2;
+
+            }
+            else
+            {
+                b[oddplacer]=a[i];
+                oddplacer+=2;
+            }
+        }
+        return b;
+        
+    }
